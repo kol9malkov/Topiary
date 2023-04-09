@@ -1,0 +1,15 @@
+{% extends 'learning_logs/base.html' %} {% block header %}
+<div class="jumbotron">
+  <h1>Записывай новое</h1>
+</div>
+{% endblock header %} {% block content %} {% if user.is_authenticated %}
+<h2>
+  Всякий раз, когда ты узнаешь что-то новое по какой-либо теме, делайте запись с
+  кратким изложением того, что узнал
+</h2>
+{% else %}
+<h2>
+  <a href="{% url 'users:register' %}">Зарегистрируй учетную запись</a>, чтобы
+  вести свой собственный журнал обучения
+</h2>
+{% endif %} {% endblock content %}
